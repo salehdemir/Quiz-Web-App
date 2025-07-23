@@ -45,6 +45,7 @@ const quizzes={
     
     const startBtn =document.getElementById("homeBtn");
     const homeSec=document.getElementById("home");
+    const homeLink = document.getElementById("home-link");
     const quizSec=document.getElementById("quiz");
     const resultSec=document.getElementById("result");
     const questionsContainer=document.getElementById("questions-container");
@@ -76,11 +77,26 @@ const quizzes={
       });
     });
 
+    homeLink.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  navLinks.forEach(link => link.classList.remove("active"));
+
+  navLinksUl.classList.remove("show");
+  burger.classList.remove("open");
+
+  showSection("home");
+});
+
 
     function startQuiz(topic) {
   currentTopic = topic;
   currentPage = 0;
   userAnswers = [];
+
+  document.getElementById("quiz-title").textContent = topic.toUpperCase() + " Quiz";
+
+
   showSection("quiz");
   loadQuestion();
 }

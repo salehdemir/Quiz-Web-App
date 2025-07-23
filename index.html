@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-      <!-- <header>
+       
+  <header>
     <a href="#" class="logo">ULEARNA</a>
     <nav>
       <ul id="navLinks">
@@ -19,61 +20,35 @@
     <div class="burger" id="burger">
       <span></span><span></span><span></span>
     </div>
-  </header> -->
+  </header>
 
-    <!-- <main> -->
  
+  <main>
      
-    <!-- <section id="home">
+    <section id="home">
       <h2 id="homeH2">Welcome to ULEARNA Quiz App</h2>
       <p id="homeP">Select a subject from the navigation bar to begin a 10‑question quiz.</p>
-      <button id="startBtn">Start Quiz</button>
-    </section> -->
+      <button id="homeBtn">Start Quiz</button>
+    </section>
 
-          <!-- <section id="result" class="text-center">
+
+    <section id="quiz">
+      <h2 id="quiz-title">Quiz</h2>
+      <div id="questions-container"></div>
+      <button id="next-btn" class="btn btn-primary btn-block">Next</button>
+      <button id="submit-btn" class="btn btn-primary btn-block" style="display:none;">Submit Answers</button>
+    </section>
+
+    <section id="result" class="text-center">
       <h2 id="resultH2">Results</h2>
       <div id="score"></div>
       <div id="percentage"></div>
       <button id="try-again" class="btn btn-primary btn-block">Try Again</button>
       <button id="go-home" class="btn btn-secondary btn-block">Home</button>
-    </section> -->
+    </section>
+  </main>
 
-      <!-- <section id="quiz">
-      <h2 id="quiz-title">Quiz</h2>
-      <div id="questions-container"></div>
-      <button id="next-btn" class="btn btn-primary btn-block">Next</button>
-      <button id="submit-btn" class="btn btn-primary btn-block" style="display:none;">Submit Answers</button>
-    </section> -->
 
-      
-    <!-- </main> -->
-
-    <nav id="navbar">
-  <div id="logo">ULEARNA</div>
-  <div id="nav-links">
-    <button class="nav-btn" data-subject="home">Home</button>
-    <button class="nav-btn" data-subject="html">HTML</button>
-    <button class="nav-btn" data-subject="css">CSS</button>
-    <button class="nav-btn" data-subject="js">JavaScript</button>
-  </div>
-</nav>
-
-<div id="content">
-      <div id="home">
-    <h1 id="homeH1">Welcome to ULEARNA Quiz App</h1>
-    <p id="homeP">Select a subject from the navigation bar to begin a 10‑question quiz.</p>
-
-    <button id="startBtn">Start Quiz</button>
-  </div>
-
-  <div id="quiz" style="display: none;">
-  <h2 id="question"></h2>
-  <div id="options"></div>
-  <button id="nextBtn" style="display: none;">Next Question</button>
-</div>
-</div>
-
-    
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
