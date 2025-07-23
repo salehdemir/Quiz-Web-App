@@ -2,14 +2,14 @@ const quizzes={
       html:[
         {q:"What does HTML stand for?",o:["Hyper Text Markup Language","Home Tool Markup Language","Hyperlinks and Text Markup Language","Hyperlinking Text Management Language"],a:0},
         {q:"Which tag creates a line break?",o:["<lb>","<break>","<br>","<line>"],a:2},
-        // {q:"Choose the correct HTML element for the largest heading:",o:["<h6>","<heading>","<h1>","<head>"],a:2},
-        // {q:"Which attribute specifies a unique identifier for an element?",o:["class","id","name","data"],a:1},
-        // {q:"Which tag is used to embed an image?",o:["<img>","<pic>","<image>","<src>"],a:0},
-        // {q:"Which element defines important text?",o:["<important>","<em>","<strong>","<b>"],a:2},
-        // {q:"Which tag creates a hyperlink?",o:["<a>","<link>","<href>","<url>"],a:0},
-        // {q:"What is the correct HTML for adding a background color?",o:["<body bg='yellow'>","<body style='background-color:yellow;'>","<background>yellow</background>","<body background='yellow'>"],a:1},
-        // {q:"Which element is used for a table row?",o:["<tr>","<td>","<table>","<th>"],a:0},
-        // {q:"Which element contains meta information for the document?",o:["<meta>","<header>","<head>","<body>"],a:2}
+        {q:"Choose the correct HTML element for the largest heading:",o:["<h6>","<heading>","<h1>","<head>"],a:2},
+        {q:"Which attribute specifies a unique identifier for an element?",o:["class","id","name","data"],a:1},
+        {q:"Which tag is used to embed an image?",o:["<img>","<pic>","<image>","<src>"],a:0},
+        {q:"Which element defines important text?",o:["<important>","<em>","<strong>","<b>"],a:2},
+        {q:"Which tag creates a hyperlink?",o:["<a>","<link>","<href>","<url>"],a:0},
+        {q:"What is the correct HTML for adding a background color?",o:["<body bg='yellow'>","<body style='background-color:yellow;'>","<background>yellow</background>","<body background='yellow'>"],a:1},
+        {q:"Which element is used for a table row?",o:["<tr>","<td>","<table>","<th>"],a:0},
+        {q:"Which element contains meta information for the document?",o:["<meta>","<header>","<head>","<body>"],a:2}
       ],
       css:[
         {q:"What does CSS stand for?",o:["Cascading Style Sheets","Colorful Style Sheets","Creative Style System","Computer Style Sheets"],a:0},
@@ -131,8 +131,12 @@ function loadQuestion() {
     input.type = "radio";
     input.name = "option";
     input.value = index;
+    input.className = "custom-radio";
+    const span = document.createElement("span");
+    span.textContent = ` ${opt}`;
+
     label.appendChild(input);
-    label.appendChild(document.createTextNode(` ${opt}`));
+    label.appendChild(span);
     optionsContainer.appendChild(label);
   });
 
