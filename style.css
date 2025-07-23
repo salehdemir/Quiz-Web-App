@@ -1,3 +1,13 @@
+:root{
+ --bgColor: #eaeaea;
+ --divColor:#f9f9f9;
+ --navColor:#00bdb6;
+ --errorColor:red;
+ --navTextColor:#fff;
+ --button-color:#19b394;
+ --button-color-hover:#139e82;
+}
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -5,15 +15,15 @@
 }
     body{
         font-family:Arial,Helvetica,sans-serif;
-        background:#eaeaea;
+        background:var(--bgColor);
     }
 
     header{
         position:fixed;
         top:0;
         width:100%;
-        background:#00bdb6;
-        color:#fff;
+        background:var(--navColor);
+        color:var(--navTextColor);
         display:flex;
         align-items:center;
         justify-content:space-between;
@@ -24,7 +34,7 @@
         font-size:2rem;
         font-weight:bold;
         text-decoration:none;
-        color:#fff;
+        color:var(--navTextColor);
         transition: 0.3s;
     }
     .logo:hover{
@@ -37,7 +47,7 @@
         margin-right: 3rem;
     }
     nav a{
-        color:#fff;
+        color:var(--navTextColor);
         text-decoration:none;
         position:relative;
     }
@@ -48,7 +58,7 @@
         height:2px;
         bottom:-4px;
         left:0;
-        background:#fff;
+        background:var(--navTextColor);
         transition:width .3s ease;
     }
     nav a:hover::after,nav a.active::after{
@@ -64,7 +74,7 @@
     .burger span{
         width:2rem;
         height:0.2rem;
-        background:#fff;
+        background:var(--navTextColor);
         border-radius:3px;
         transition:transform .3s ease,opacity .3s ease;
     }
@@ -82,7 +92,7 @@
         max-width:80%;
         margin:6rem auto ;
         padding:1rem;
-        background:#f9f9f9;
+        background:var(--divColor);
         border-radius:8px;
         box-shadow:0 2px 8px rgba(0,0,0,.08);
   
@@ -108,14 +118,14 @@
     #homeBtn{
         padding: 0.5rem;
         border: none;
-        background-color: #19b394;
+        background-color: var(--button-color);
         border-radius: 6px;
-        color: #fff;
+        color: var(--navTextColor);
         margin-top: 4rem;
         font-size: 1.2rem;
     }
     #homeBtn:hover{
-        background-color: #139e82;
+        background-color: var(--button-color-hover);
     }
 
     #quiz,#result{
@@ -136,19 +146,17 @@
         margin-bottom:1.5rem;
     }
     .options label{
-        background:#fff;
+        background:var(--navTextColor);
         border:1px solid #ccc;
         padding:0.5rem;
-        border-radius:6px;
+        border-radius:8px;
         cursor:pointer;
-        /* transition:background .25s ease; */
-        border-left:5px solid transparent;
     }
     .options label:hover{
         background: #f7f7f7;
     }
     .options input{
-        margin-right:.6rem;
+        margin-right:1rem;
     }
     .options input:checked+span{
         font-weight:bold;
@@ -164,15 +172,15 @@
         cursor:pointer;
     }
     .btn-primary{
-        background:#19b394;
-        color:#fff;
+        background:var(--button-color);
+        color:var(--navTextColor);
     }
     .btn-primary:hover{
-        background:#139e82;
+        background:var(--button-color-hover);
     }
     .btn-secondary{
-        background:#fff;
-        color:#19b394;
+        background: var(--navTextColor);
+        color:var(--button-color);
     }
     .btn-secondary:hover{
         background-color: #f7f7f7;
@@ -199,23 +207,54 @@
     }
 
         .error-message {
-  color: red;
+  color: var(--errorColor);
   margin-top: 8px;
   font-size: 0.9rem;
-  /* content: "⚠️ Please select one answer."; */
+  /* content: " Please select one answer."; */
 }
 .error-message::before {
   content: "⚠️ Please select one answer.";
+}
+
+.custom-radio {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+
+.custom-radio:checked {
+  border-color: var(--button-color);
+  background-color: var(--button-color);
+}
+.custom-radio:checked::before {
+  content: "";
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: var(--navTextColor);
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
 }
     
 
     @media(max-width:768px){
       nav ul{
         position:fixed;
-        top:58px;
+        top:4rem;
         right:-100%;
         flex-direction:column;
-        background:#00bdb6;
+        background:var(--navColor);
         width:30%;
         padding:1rem 0;
     }      
