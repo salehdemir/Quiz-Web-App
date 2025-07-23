@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&family=Bitcount+Prop+Double:wght@100..900&family=Caveat:wght@400..700&family=Poetsen+One&display=swap');
+
+
 :root{
  --bgColor: #eaeaea;
  --divColor:#f9f9f9;
@@ -14,7 +18,7 @@
     padding:0;
 }
     body{
-        font-family:Arial,Helvetica,sans-serif;
+        font-family:Arial,sans-serif;
         background:var(--bgColor);
     }
 
@@ -31,11 +35,13 @@
         z-index:1000;
     }
     .logo{
-        font-size:2rem;
+        font-size:3rem;
         font-weight:bold;
         text-decoration:none;
         color:var(--navTextColor);
         transition: 0.3s;
+          font-family: "Poetsen One", sans-serif;
+  font-weight: 500;
     }
     .logo:hover{
         transform: scale(1.1);
