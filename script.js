@@ -1,383 +1,184 @@
-
-// const questions = {
-//   html: [
-//     {
-//       question: "What does HTML stand for?",
-//       options: ["Hyper Text Markup Language", "High Text Machine Language", "Hyperlinking Text Management Language", "Home Tool Markup Language"],
-//       answer: "Hyper Text Markup Language"
-//     },
-//     {
-//       question: "Which tag is used to create a hyperlink in HTML?",
-//       options: ["<link>", "<a>", "<href>", "<url>"],
-//       answer: "<a>"
-//     },
-//     {
-//       question: "Which tag is used to display an image in HTML?",
-//       options: ["<img>", "<src>", "<image>", "<pic>"],
-//       answer: "<img>"
-//     },
-//     {
-//       question: "What is the correct HTML element for the largest heading?",
-//       options: ["<head>", "<h6>", "<h1>", "<heading>"],
-//       answer: "<h1>"
-//     },
-//     {
-//       question: "Which attribute is used to provide an alternative text for an image?",
-//       options: ["title", "alt", "src", "href"],
-//       answer: "alt"
-//     },
-//     {
-//       question: "What is the correct way to make a list with bullets?",
-//       options: ["<list>", "<ol>", "<ul>", "<dl>"],
-//       answer: "<ul>"
-//     },
-//     {
-//       question: "How do you create a checkbox in HTML?",
-//       options: ["<checkbox>", "<input type='checkbox'>", "<input type='check'>", "<input checkbox>"],
-//       answer: "<input type='checkbox'>"
-//     },
-//     {
-//       question: "What does the <br> tag do?",
-//       options: ["Creates a bold text", "Adds a break line", "Starts a new paragraph", "None"],
-//       answer: "Adds a break line"
-//     },
-//     {
-//       question: "Which HTML tag is used to define a table row?",
-//       options: ["<td>", "<tr>", "<table>", "<row>"],
-//       answer: "<tr>"
-//     },
-//     {
-//       question: "Which element is used to input data from a user?",
-//       options: ["<input>", "<form>", "<textarea>", "<select>"],
-//       answer: "<input>"
-//     }
-//   ],
-//   css: [
-//     {
-//       question: "What does CSS stand for?",
-//       options: ["Creative Style Sheets", "Colorful Style Sheets", "Cascading Style Sheets", "Computer Style Sheets"],
-//       answer: "Cascading Style Sheets"
-//     },
-//     {
-//       question: "Which property is used to change the text color?",
-//       options: ["font-color", "text-color", "color", "background-color"],
-//       answer: "color"
-//     },
-//     {
-//       question: "Which property is used to set background color?",
-//       options: ["color", "background", "bgcolor", "background-color"],
-//       answer: "background-color"
-//     },
-//     {
-//       question: "Which symbol is used for ID selector in CSS?",
-//       options: [".", "#", "*", "$"],
-//       answer: "#"
-//     },
-//     {
-//       question: "How do you make text bold in CSS?",
-//       options: ["font-weight: bold;", "text-style: bold;", "bold: true;", "style: bold;"],
-//       answer: "font-weight: bold;"
-//     },
-//     {
-//       question: "What does the `margin` property affect?",
-//       options: ["Spacing inside the element", "Spacing outside the element", "Text alignment", "Border color"],
-//       answer: "Spacing outside the element"
-//     },
-//     {
-//       question: "How do you select all elements of a class in CSS?",
-//       options: [".classname", "#classname", "*classname", "/classname"],
-//       answer: ".classname"
-//     },
-//     {
-//       question: "Which CSS unit is relative to the root element?",
-//       options: ["em", "px", "rem", "%"],
-//       answer: "rem"
-//     },
-//     {
-//       question: "Which of the following positions an element relative to its first positioned ancestor?",
-//       options: ["static", "fixed", "absolute", "relative"],
-//       answer: "absolute"
-//     },
-//     {
-//       question: "Which property is used to control layout in flexbox?",
-//       options: ["display", "flex-direction", "position", "float"],
-//       answer: "flex-direction"
-//     }
-//   ],
-//   js: [
-//     {
-//       question: "Which company developed JavaScript?",
-//       options: ["Netscape", "Mozilla", "Sun Microsystems", "Oracle"],
-//       answer: "Netscape"
-//     },
-//     {
-//       question: "How do you write 'Hello World' in an alert box?",
-//       options: ["msg('Hello World')", "alert('Hello World')", "msgBox('Hello World')", "alertBox('Hello World')"],
-//       answer: "alert('Hello World')"
-//     },
-//     {
-//       question: "Which keyword is used to declare a variable in JavaScript?",
-//       options: ["var", "int", "string", "float"],
-//       answer: "var"
-//     },
-//     {
-//       question: "What does `===` mean in JavaScript?",
-//       options: ["Assignment", "Comparison with type conversion", "Strict equality", "Not equal"],
-//       answer: "Strict equality"
-//     },
-//     {
-//       question: "How do you write a function in JavaScript?",
-//       options: ["function = myFunc()", "function myFunc()", "function:myFunc()", "func myFunc()"],
-//       answer: "function myFunc()"
-//     },
-//     {
-//       question: "Which method adds an element at the end of an array?",
-//       options: ["push()", "pop()", "shift()", "unshift()"],
-//       answer: "push()"
-//     },
-//     {
-//       question: "Which method is used to loop through an array?",
-//       options: ["loop()", "each()", "forEach()", "iterate()"],
-//       answer: "forEach()"
-//     },
-//     {
-//       question: "Which operator is used to assign a value to a variable?",
-//       options: ["*", "-", "=", "+"],
-//       answer: "="
-//     },
-//     {
-//       question: "Which of these is not a JavaScript data type?",
-//       options: ["string", "number", "boolean", "character"],
-//       answer: "character"
-//     },
-//     {
-//       question: "What will `typeof []` return?",
-//       options: ["array", "object", "list", "undefined"],
-//       answer: "object"
-//     }
-//   ]
-// };
-
-// const navButtons = document.querySelectorAll('.nav-btn');
-// const startBtn = document.getElementById('startBtn');
-// const homeDiv = document.getElementById("home");
-// const quizDiv = document.getElementById('quiz');
-// const questionEl = document.getElementById('question');
-// const optionsEl = document.getElementById('options');
-// const nextBtn = document.getElementById('nextBtn');
-// const resultDiv = document.getElementById("result");
-// const resultMessage = document.getElementById("resultMessage");
-// const resultDetails = document.getElementById("resultDetails");
-// const tryAgainBtn = document.getElementById("tryAgainBtn");
-// const nextSubjectBtn = document.getElementById("nextSubjectBtn");
-// const goHomeBtn = document.getElementById("goHomeBtn");
-// const subjectOrder = ['html', 'css', 'js'];
+const quizzes={
+      html:[
+        {q:"What does HTML stand for?",o:["Hyper Text Markup Language","Home Tool Markup Language","Hyperlinks and Text Markup Language","Hyperlinking Text Management Language"],a:0},
+        {q:"Which tag creates a line break?",o:["<lb>","<break>","<br>","<line>"],a:2},
+        // {q:"Choose the correct HTML element for the largest heading:",o:["<h6>","<heading>","<h1>","<head>"],a:2},
+        // {q:"Which attribute specifies a unique identifier for an element?",o:["class","id","name","data"],a:1},
+        // {q:"Which tag is used to embed an image?",o:["<img>","<pic>","<image>","<src>"],a:0},
+        // {q:"Which element defines important text?",o:["<important>","<em>","<strong>","<b>"],a:2},
+        // {q:"Which tag creates a hyperlink?",o:["<a>","<link>","<href>","<url>"],a:0},
+        // {q:"What is the correct HTML for adding a background color?",o:["<body bg='yellow'>","<body style='background-color:yellow;'>","<background>yellow</background>","<body background='yellow'>"],a:1},
+        // {q:"Which element is used for a table row?",o:["<tr>","<td>","<table>","<th>"],a:0},
+        // {q:"Which element contains meta information for the document?",o:["<meta>","<header>","<head>","<body>"],a:2}
+      ],
+      css:[
+        {q:"What does CSS stand for?",o:["Cascading Style Sheets","Colorful Style Sheets","Creative Style System","Computer Style Sheets"],a:0},
+        {q:"Which property is used to change text color?",o:["font-color","color","text-color","fgcolor"],a:1},
+        {q:"How do you link a CSS file in HTML?",o:["<stylesheet src='style.css'>","<css href='style.css'>","<link rel='stylesheet' href='style.css'>","<style src='style.css'>"],a:2},
+        {q:"Which property changes the left margin?",o:["padding-left","margin-left","indent","space-left"],a:1},
+        {q:"Which is the correct CSS comment syntax?",o:["/* comment */","// comment","<!-- comment -->","# comment"],a:0},
+        {q:"Which selector selects all <p> elements inside a div?",o:["div+p","div>p","div p","div~p"],a:2},
+        {q:"How do you make text bold?",o:["font-weight:bold;","style:bold;","text:bold;","font:bold;"],a:0},
+        {q:"Which property changes the size of an element's font?",o:["font-size","text-size","size","type-size"],a:0},
+        {q:"Which value positions an element relative to its first positioned ancestor?",o:["static","absolute","fixed","relative"],a:1},
+        {q:"What does the z-index property control?",o:["vertical alignment","stacking order","horizontal alignment","opacity"],a:1}
+      ],
+      js:[
+        {q:"Which company developed JavaScript?",o:["Netscape","Microsoft","Sun Microsystems","IBM"],a:0},
+        {q:"Which symbol is used for comments in JavaScript?",o:["//","<!--","##","**"],a:0},
+        {q:"How do you declare a variable in ES6?",o:["var x;","let x;","dim x;","int x;"],a:1},
+        {q:"Which method converts JSON to a JavaScript object?",o:["JSON.parse()","JSON.stringify()","JSON.convert()","JSON.object()"],a:0},
+        {q:"Which operator checks both value and type equality?",o:["==","=","===","!="],a:2},
+        {q:"Which array method adds an element to the end?",o:["push()","pop()","shift()","unshift()"],a:0},
+        {q:"What is the output of typeof null?",o:["'null'","'object'","'undefined'","'boolean'"],a:1},
+        {q:"Which keyword is used to create a class?",o:["function","class","constructor","object"],a:1},
+        {q:"Which function is called after a set delay?",o:["timer()","setTimeout()","delay()","wait()"],a:1},
+        {q:"What does DOM stand for?",o:["Document Object Model","Data Object Model","Digital Ordinance Model","Desktop Object Model"],a:0}
+      ]
+    };
 
 
-// let currentSubjectIndex = 0;
-// let currentSubject = "";
-// let currentQuestionIndex = 0;
-// let currentQuestions = [];
-// let score = 0;
 
-
-// navButtons.forEach(button => {
-//   button.addEventListener("click", () => {
-//     const subject = button.getAttribute("data-subject");
-
-//     if (subject === "home") {
-//       quizDiv.style.display = "none";
-//       homeDiv.style.display = "block";
-//     } else {
-//       currentSubject = subject;
-//       currentQuestions = questions[subject];
-//       currentQuestionIndex = 0;
-//       homeDiv.style.display = "none";
-//       quizDiv.style.display = "block";
-//       showQuestion();
-//     }
-//   });
-// });
-
-// function showQuestion() {
-//   const currentQ = currentQuestions[currentQuestionIndex];
-//   questionEl.textContent = currentQ.question;
-//   optionsEl.innerHTML = "";
-
-//   currentQ.options.forEach(option => {
-//     const btn = document.createElement("button");
-//     btn.textContent = option;
-//     btn.className = "option-btn";
-//     btn.onclick = () => checkAnswer(option);
-//     optionsEl.appendChild(btn);
-//   });
-
-//   nextBtn.style.display = "none";
-// }
-
-// function checkAnswer(selected) {
-//   const correct = currentQuestions[currentQuestionIndex].answer;
-//   if (selected === correct) {
-//     alert("Correct!");
-//   } else {
-//     alert("Wrong!");
-//   }
-//   nextBtn.style.display = "block";
-// }
-
-// nextBtn.addEventListener("click", () => {
-//   currentQuestionIndex++;
-
-//   if (currentQuestionIndex < currentQuestions.length) {
-//     showQuestion();
-//   } else {
-//     currentSubjectIndex++;
+    let currentTopic="";
+    let currentPage=0;
+    let userAnswers=[];
     
-//     if (currentSubjectIndex < subjectOrder.length) {
-//       currentSubject = subjectOrder[currentSubjectIndex];
-//       currentQuestions = questions[currentSubject];
-//       currentQuestionIndex = 0;
-//       alert("Now starting " + currentSubject.toUpperCase() + " quiz");
-//       showQuestion();
-//     } else {
-//       alert("🎉 You've finished all quizzes! Well done!");
-//       quizDiv.style.display = "none";
-//       homeDiv.style.display = "block";
-//     }
-//   }
-// });
+    const startBtn =document.getElementById("homeBtn");
+    const homeSec=document.getElementById("home");
+    const quizSec=document.getElementById("quiz");
+    const resultSec=document.getElementById("result");
+    const questionsContainer=document.getElementById("questions-container");
+    const nextBtn=document.getElementById("next-btn");
+    const submitBtn=document.getElementById("submit-btn");
+    const scoreDiv=document.getElementById("score");
+    const percentDiv=document.getElementById("percentage");
+    const tryAgainBtn=document.getElementById("try-again");
+    const goHomeBtn=document.getElementById("go-home");
+    const navLinks=document.querySelectorAll(".nav-link");
+    const burger=document.getElementById("burger");
+    const navLinksUl=document.getElementById("navLinks");
 
 
-
-// startBtn.addEventListener('click', () => {
-   
-//   currentSubjectIndex = 0;
-//   currentSubject = subjectOrder[currentSubjectIndex];
-//   currentQuestions = questions[currentSubject];
-//   currentQuestionIndex = 0;
-
-//   homeDiv.style.display = 'none';
-//   quizDiv.style.display = 'block';
-//   showQuestion();
-// });
-
-// function checkAnswer(selected) {
-//   const correct = currentQuestions[currentQuestionIndex].answer;
-//   if (selected === correct) {
-//     score++;
-//     alert("Correct!");
-//   } else {
-//     alert("Wrong!");
-//   }
-//   nextBtn.style.display = "block";
-// }
-
-// function showResult() {
-//   const total = currentQuestions.length;
-//   const percent = Math.round((score / total) * 100);
-
-//   resultMessage.textContent = `You scored ${score} out of ${total}`;
-//   resultDetails.textContent = `Your percentage is ${percent}%. You ${percent >= 60 ? 'Pass ' : 'Fail '}.`;
-
-//   quiz.style.display = "none";
-//   resultDiv.style.display = "block";
-// }
-
-// tryAgainBtn.addEventListener("click", () => {
-//   currentQuestionIndex = 0;
-//   score = 0;
-//   resultDiv.style.display = "none";
-//   quiz.style.display = "block";
-//   showQuestion();
-// });
-
-// nextSubjectBtn.addEventListener("click", () => {
-//   const subjects = Object.keys(questions);
-//   const currentIndex = subjects.indexOf(currentSubject);
-//   const nextSubject = subjects[(currentIndex + 1) % subjects.length];
-
-//   currentSubject = nextSubject;
-//   currentQuestions = questions[currentSubject];
-//   currentQuestionIndex = 0;
-//   score = 0;
-//   resultDiv.style.display = "none";
-//   quiz.style.display = "block";
-//   showQuestion();
-// });
-
-// goHomeBtn.addEventListener("click", () => {
-//   resultDiv.style.display = "none";
-//   homeDiv.style.display = "block";
-// });
+    burger.addEventListener("click",()=>{
+      burger.classList.toggle("open");
+      navLinksUl.classList.toggle("show");
+    });
 
 
+    navLinks.forEach(link=>{
+      link.addEventListener("click",e=>{
+        e.preventDefault();
+        navLinks.forEach(l=>l.classList.remove("active"));
+        link.classList.add("active");
+        navLinksUl.classList.remove("show");
+        burger.classList.remove("open");
+        startQuiz(link.dataset.topic);
+      });
+    });
 
 
-
-// const quizData = [
-//   {
-//     question: "What is the capital of France?",
-//     options: ["Paris", "Berlin", "Madrid", "Rome"],
-//     answer: "Paris"
-//   },
-//   {
-//     question: "What is 2 + 2?",
-//     options: ["3", "4", "5", "22"],
-//     answer: "4"
-//   }
-
-// ];
-
-
-
-
-// function loadQuestion() {
-//   optionsEl.innerHTML = '';
-
-
-//   const currentQuestion = quizData[currentQuestionIndex];
-
-//   questionEl.innerText = currentQuestion.question;
-
-
-//   currentQuestion.options.forEach(option => {
-//     const button = document.createElement('button');
-//     button.innerText = option;
-//     button.classList.add('option-btn');
-//     optionsEl.appendChild(button);
-
-   
-//     button.addEventListener('click', () => {
-//       selectAnswer(button, currentQuestion.answer);
-//     });
-//   });
-
-//   nextBtn.style.display = 'none';
-// }
-
-
-
-
-
-function toggleMenu() {
-  const navLinks = document.getElementById("navLinks");
-  navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    function startQuiz(topic) {
+  currentTopic = topic;
+  currentPage = 0;
+  userAnswers = [];
+  showSection("quiz");
+  loadQuestion();
 }
 
-function loadHome() {
-  document.getElementById("content").innerHTML = `
-    <section class="home">
-    <h1 id="homeH1">Welcome to ULEARNA Quiz App</h1>
-    <p id="homeP">Test your knowledge in HTML, CSS, and JavaScript with fun quizzes</p>
+startBtn.addEventListener("click", ()=> {
+startQuiz("html");
 
-    <button onclick="startQuiz('html')">Start Quiz</button>
-  </section>
-  `;
+})
+
+    function showSection(section) {
+  homeSec.style.display = section === "home" ? "flex" : "none";
+  quizSec.style.display = section === "quiz" ? "block" : "none";
+  resultSec.style.display = section === "result" ? "block" : "none";
 }
 
-function startQuiz(subject) {
-  console.log("Starting quiz for:", subject);
-  // We'll implement quiz loading in next steps
+
+
+function loadQuestion() {
+  const questionData = quizzes[currentTopic][currentPage];
+  questionsContainer.innerHTML = "";
+
+  const qEl = document.createElement("div");
+  qEl.className = "question";
+  qEl.textContent = `${currentPage + 1}. ${questionData.q}`;
+
+  const optionsContainer = document.createElement("div");
+  optionsContainer.className = "options";
+
+  questionData.o.forEach((opt, index) => {
+    const label = document.createElement("label");
+    const input = document.createElement("input");
+    input.type = "radio";
+    input.name = "option";
+    input.value = index;
+    label.appendChild(input);
+    label.appendChild(document.createTextNode(` ${opt}`));
+    optionsContainer.appendChild(label);
+  });
+
+  questionsContainer.appendChild(qEl);
+  questionsContainer.appendChild(optionsContainer);
+
+  nextBtn.style.display = "block";
+  submitBtn.style.display = "none";
 }
 
+nextBtn.addEventListener("click", () => {
+  const selected = document.querySelector("input[name='option']:checked");
+  if (!selected) {
+      if (!document.getElementById("error-msg")) {
+    const error = document.createElement("div");
+    error.id = "error-msg";
+   error.className = "error-message";
+    // error.textContent = "⚠️ Please select one answer.";
+    document.querySelector(".options").appendChild(error);
+  }
+    return;
+  }
+     else {
+  const existingError = document.getElementById("error-msg");
+  if (existingError) existingError.remove();
+}
+
+  userAnswers.push(Number(selected.value));
+  currentPage++;
+
+  if (currentPage < quizzes[currentTopic].length) {
+    loadQuestion();
+  } else {
+    showResults();
+  }
+});
+
+submitBtn.addEventListener("click", () => {
+  showResults();
+});
+
+function showResults() {
+  showSection("result");
+
+  const correctAnswers = quizzes[currentTopic].filter(
+    (q, i) => q.a === userAnswers[i]
+  );
+
+  const score = correctAnswers.length;
+  const percent = (score / quizzes[currentTopic].length) * 100;
+
+  scoreDiv.textContent = `Your answered ${score} out of ${quizzes[currentTopic].length} correctly.`;
+  percentDiv.textContent = `Your score is ${percent}% – ${percent>=50?"Pass 🎉":"Fail ❌"}`;
+
+}
+
+tryAgainBtn.addEventListener("click", () => {
+  startQuiz(currentTopic);
+});
+
+goHomeBtn.addEventListener("click", () => {
+  navLinks.forEach(l => l.classList.remove("active"));
+  showSection("home");
+});
 
