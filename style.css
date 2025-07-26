@@ -96,7 +96,7 @@
 
     main{
         max-width:80%;
-        margin:6rem auto ;
+        margin:8rem auto ;
         padding:1rem;
         background:var(--divColor);
         border-radius:8px;
@@ -110,7 +110,7 @@
         align-items:center;
         gap:1rem;
         text-align:center;
-        height: 70vh;
+        height: 65vh;
         justify-content: center;
        
     }
