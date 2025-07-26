@@ -189,7 +189,7 @@ function showResults() {
   const percent = (score / quizzes[currentTopic].length) * 100;
 
   scoreDiv.textContent = `Your answered ${score} out of ${quizzes[currentTopic].length} correctly.`;
-  percentDiv.textContent = `Your score is ${percent}% – ${percent>=50?"Pass 🎉":"Fail ❌"}`;
+  percentDiv.textContent = `Your score is ${percent}% – ${percent>60?"Pass 🎉":"Fail ❌"}`;
 
 }
 
